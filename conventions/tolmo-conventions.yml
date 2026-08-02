@@ -1,0 +1,48 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tolmo.com/
+note: >-
+  Cross-cutting semantics for the Tolmo CLI surface (no public REST OpenAPI is
+  published). Idempotency and cursor pagination are NOT documented for this
+  surface, so no Idempotency pointer is emitted.
+authentication:
+  style: OAuth browser login (interactive) or bearer API token (CI/CD)
+  ref: authentication/tolmo-authentication.yml
+organization_scoping:
+  description: >-
+    Every query, finding, and proxy call runs in an organization context. The
+    active org comes from the profile; override per command with --org <slug>,
+    or maintain separate named profiles (--profile / TOLMO_PROFILE).
+output_format:
+  default: human-readable, column-aligned table
+  machine: "--json emits a stable JSON schema (table formatting may change between releases)"
+  guidance: Always pass --json when parsing programmatically; pipe to jq.
+global_flags: ["--org <slug>", "--profile <name>", "--json"]
+config_precedence:
+- environment variable (highest)
+- command-line flag (--org / --profile)
+- active profile in ~/.tolmo/
+- built-in default (production API URL, `default` profile)
+identifiers:
+  finding_ids: >-
+    Finding IDs support prefix matching; the short 8-character IDs from
+    `tolmo findings list` work in every subcommand (no full UUID required).
+passthrough:
+  description: >-
+    `tolmo query -- gh ...` and `tolmo query -- aws ...` run the local gh/aws
+    CLI with short-lived backend-injected credentials over a Unix socket proxy.
+  rule: The `--` separator is mandatory or Cobra strips unknown flags before they reach the tool.
+graph_model:
+  node: GraphNode (resourceType, resourceKey)
+  edge: GRAPH_EDGE (type)
+  temporal_fields: [firstSeenAt, lastSeenAt]   # epoch milliseconds
+idempotency:
+  documented: false
+pagination:
+  documented: false
+error_envelope:
+  documented: false
+cross_links:
+  authentication: authentication/tolmo-authentication.yml
+  lifecycle: lifecycle/tolmo-lifecycle.yml
+  cli: cli/tolmo-cli.yml

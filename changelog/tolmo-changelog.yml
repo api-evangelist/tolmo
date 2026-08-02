@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/tolmohq/tolmo/releases
+scheme: semver
+current: v0.24.0
+note: >-
+  Tolmo publishes releases as GitHub tags on tolmohq/tolmo. Stable releases plus
+  automated nightly builds from main. Recent window captured below; the GitHub
+  releases page is the source of truth for full history.
+entries:
+- version: v0.24.0
+  date: '2026-07-15'
+  channel: stable
+- version: v0.24.0-nightly.20260721
+  date: '2026-07-21'
+  channel: nightly
+- version: v0.24.0-nightly.20260720
+  date: '2026-07-20'
+  channel: nightly
+- version: v0.23.0-nightly.20260715
+  date: '2026-07-15'
+  channel: nightly

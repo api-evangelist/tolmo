@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tolmo.com/installation
+note: >-
+  Tolmo distributes a single first-party CLI binary (tolmo), not per-language
+  client SDK libraries. Packages below are the official distribution channels
+  for that binary; see cli/tolmo-cli.yml for the command surface.
+packages:
+- language: shell
+  registry: homebrew
+  name: tolmohq/tolmo/tolmo
+  url: https://github.com/tolmohq/tolmo
+  install: brew tap tolmohq/tolmo https://github.com/tolmohq/tolmo && brew install tolmohq/tolmo/tolmo
+  official: true
+- language: shell
+  registry: homebrew
+  name: tolmohq/tolmo/tolmo-nightly
+  url: https://github.com/tolmohq/tolmo
+  install: brew install tolmohq/tolmo/tolmo-nightly
+  official: true
+  channel: nightly
+- language: shell
+  registry: script
+  name: tolmo install script
+  url: https://tolmo.com/install.sh
+  install: curl -fsSL https://tolmo.com/install.sh | sh
+  official: true
+- language: shell
+  registry: debian
+  name: tolmo (.deb)
+  url: https://github.com/tolmohq/tolmo/releases/latest
+  install: sudo dpkg -i tolmo_<version>_<arch>.deb
+  official: true

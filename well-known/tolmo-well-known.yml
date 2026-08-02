@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of /.well-known/ on tolmo.com, app.tolmo.com, api.tolmo.com
+hosts:
+- host: https://tolmo.com
+  documents:
+  - path: /.well-known/security.txt          # RFC 9116
+    status: 200
+    file: tolmo-security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://app.tolmo.com
+  documents:
+  # app.tolmo.com is a single-page React app whose catch-all returns the SPA
+  # HTML shell (200) for every path, so these are NOT real discovery documents.
+  - path: /.well-known/openid-configuration
+    status: 200
+    note: SPA shell HTML, not a valid OIDC discovery document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    note: SPA shell HTML, not a valid RFC 8414 metadata document
+- host: https://api.tolmo.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 404

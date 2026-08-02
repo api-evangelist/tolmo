@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: generated
+source: https://docs.tolmo.com/
+note: >-
+  Tolmo itself ships a first-party agent skill installed with `tolmo skill
+  install` (writes ~/.claude/skills/tolmo/SKILL.md and ~/.agents/skills/tolmo/SKILL.md;
+  see https://docs.tolmo.com/guides/agent-skill). The packaged skills below are
+  API-Evangelist-generated operating instructions grounded in the real,
+  documented `tolmo` CLI command surface (no OpenAPI is published, so steps are
+  grounded in verified CLI commands rather than operationIds).
+provider_published_skill:
+  install: tolmo skill install
+  paths:
+  - ~/.claude/skills/tolmo/SKILL.md
+  - ~/.agents/skills/tolmo/SKILL.md
+  docs: https://docs.tolmo.com/guides/agent-skill
+skills:
+- file: tolmo-triage-findings.md
+  name: Triage and manage security findings
+  surface: tolmo findings
+  commands: [findings list, findings get, findings create, findings update, findings status, findings history, findings delete]
+- file: tolmo-query-infrastructure.md
+  name: Query the infrastructure graph and database
+  surface: tolmo sql / tolmo cypher
+  commands: [sql, cypher]
+- file: tolmo-proxy-connected-services.md
+  name: Proxy requests to connected services
+  surface: tolmo query
+  commands: [query list, query github, query aws, query linear, query sentry, query datadog]

@@ -1,0 +1,20 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/tolmohq/tolmo/releases
+versioning:
+  scheme: semver
+  current: v0.24.0
+  channels: [stable, nightly]
+  source: https://github.com/tolmohq/tolmo/releases
+  note: >-
+    CLI is released on GitHub as semver tags; nightly builds are published
+    automatically from main (e.g. v0.24.0-nightly.YYYYMMDD...). The stable JSON
+    output schema (--json) is the compatibility contract; table formatting may
+    change between releases.
+status_page: https://status.tolmo.com
+deprecation:
+  policy_url: null
+  documented: false
+sla:
+  url: null
+deprecated_operations: []

@@ -1,0 +1,85 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tolmo.com/
+name: Tolmo CLI
+binary: tolmo
+summary: >-
+  Single command-line interface for the Tolmo cloud security platform. Queries
+  the infrastructure graph (SQL + Cypher), manages security findings, proxies
+  requests to connected services (GitHub, AWS, Linear, Sentry, Datadog) with
+  server-side credential resolution, downloads threat-model artifacts, and
+  installs a Tolmo agent skill into Claude Code and other AI agents.
+platforms:
+- macOS (amd64, arm64)
+- Linux (amd64, arm64)
+install:
+- method: homebrew
+  commands:
+  - brew tap tolmohq/tolmo https://github.com/tolmohq/tolmo
+  - brew install tolmohq/tolmo/tolmo
+  docs: https://docs.tolmo.com/installation
+- method: script
+  commands:
+  - curl -fsSL https://tolmo.com/install.sh | sh
+  env: TOLMO_INSTALL_DIR overrides the target directory
+- method: debian
+  commands:
+  - sudo dpkg -i tolmo_<version>_<arch>.deb
+  source: https://github.com/tolmohq/tolmo/releases/latest
+- method: nightly
+  commands:
+  - brew install tolmohq/tolmo/tolmo-nightly
+  - curl -fsSL https://tolmo.com/install.sh | sh -s -- --nightly
+authentication:
+  interactive: tolmo auth login   # browser-based OAuth flow, stored in ~/.tolmo/
+  status: tolmo auth status
+  logout: tolmo auth logout
+  ci: TOLMO_API_TOKEN + TOLMO_ORG_SLUG environment variables (non-interactive)
+global_flags:
+- flag: "--org <slug>"
+  description: Override the active organization for a single command
+- flag: "--profile <name>"
+  description: Use a named profile instead of the default
+- flag: "--json"
+  description: Output raw JSON instead of a formatted table
+command_groups:
+- group: auth
+  description: Log in/out and inspect the active session and organization
+  commands: [login, status, logout]
+- group: sql
+  description: Run SQL queries against the organization relational database
+  docs: https://docs.tolmo.com/commands/sql-cypher
+- group: cypher
+  description: Run Cypher queries against the infrastructure graph (GraphNode / GRAPH_EDGE, firstSeenAt/lastSeenAt)
+  docs: https://docs.tolmo.com/commands/sql-cypher
+- group: findings
+  description: Create, get, list, update, transition status, view history, and delete security findings
+  commands: [list, get, create, update, status, history, delete]
+  docs: https://docs.tolmo.com/commands/findings
+- group: query
+  description: Proxy REST/GraphQL/CLI requests to connected services; credentials resolved server-side
+  commands: [list, github, aws, linear, sentry, datadog]
+  passthrough: "tolmo query -- gh ... | tolmo query -- aws ... (-- separator mandatory)"
+  docs: https://docs.tolmo.com/commands/query
+- group: code
+  description: List and clone organization repositories from GitHub/GitLab (bulk + subdirectory)
+  docs: https://docs.tolmo.com/commands/code
+- group: threat-model
+  description: List runs and download threat-model pipeline artifacts and steps
+  docs: https://docs.tolmo.com/features/threat-model
+- group: website
+  description: List crawled domains and scan history
+  docs: https://docs.tolmo.com/features/website-org
+- group: org
+  description: List organizations and switch the active organization (org switch)
+  docs: https://docs.tolmo.com/features/website-org
+- group: monitors
+  description: Create, update, and delete platform-managed Datadog monitors (tagged managed-by:tolmo)
+  docs: https://docs.tolmo.com/features/monitors
+- group: skill
+  description: Install/update the Tolmo agent skill and report status
+  commands: [install, status]
+  docs: https://docs.tolmo.com/guides/agent-skill
+- group: setup
+  description: Configure Claude Code OTEL telemetry ingest (setup claude-code)
+  docs: https://docs.tolmo.com/guides/agent-skill

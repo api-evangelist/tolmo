@@ -1,0 +1,17 @@
+generated: '2026-07-21'
+method: searched
+probe: true
+url: https://trust.tolmo.com/
+status: 200
+keywords: [Trust, Security, Compliance, Automation]
+certifications: []
+note: >-
+  A dedicated trust center is live at trust.tolmo.com (hosted trust-center
+  platform; meta keywords Trust/Security/Compliance/Automation). The named
+  certifications list is rendered client-side (JavaScript) and could not be
+  confirmed from the raw HTML, so no specific certifications (SOC 2, ISO 27001,
+  etc.) are asserted here and no Compliance pointer is emitted. Update the
+  certifications[] list if/when named certs are confirmed.
+evidence:
+- source: https://trust.tolmo.com/
+  keywords: [trust, security, compliance]

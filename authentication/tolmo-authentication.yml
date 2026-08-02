@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tolmo.com/authentication
+docs: https://docs.tolmo.com/authentication
+note: >-
+  No public OpenAPI is published, so this profile is captured from the CLI
+  authentication docs rather than derived from securitySchemes. Requests to the
+  Tolmo backend (default https://api.tolmo.com) are authenticated two ways.
+summary:
+  types: [oauth2, http-bearer]
+  api_key_in: [header]
+  oauth2_flows: [browser-based interactive login]
+schemes:
+- name: interactive-oauth
+  type: oauth2
+  description: >-
+    Browser-based OAuth flow started with `tolmo auth login`. Credentials are
+    stored locally in ~/.tolmo/ as a named profile and reused for subsequent
+    commands. Supports multiple named profiles (--profile / TOLMO_PROFILE) and
+    per-command org override (--org).
+  sources: [https://docs.tolmo.com/authentication]
+- name: api-token
+  type: http
+  scheme: bearer
+  description: >-
+    Non-interactive API token for CI/CD and automation. Set TOLMO_API_TOKEN
+    (generated from org settings in the Tolmo dashboard) together with
+    TOLMO_ORG_SLUG (the token does not encode an org identity). When set,
+    Tolmo skips profile lookup entirely.
+  sources: [https://docs.tolmo.com/configuration/environment-variables]
+environment_variables:
+- {name: TOLMO_API_TOKEN, description: API token; skips profile lookup when set}
+- {name: TOLMO_ORG_SLUG, description: Organization slug; required when TOLMO_API_TOKEN is set}
+- {name: TOLMO_API_URL, description: Backend API base URL; defaults to production}
+- {name: TOLMO_PROFILE, description: Default profile name when --profile is not passed}
+credential_model: >-
+  Connected-service credentials (GitHub App tokens, AWS role credentials,
+  Datadog API keys) are resolved server-side and never reach the client machine;
+  the CLI only carries the Tolmo token/profile.

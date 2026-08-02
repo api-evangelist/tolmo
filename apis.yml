@@ -1,28 +1,117 @@
 aid: tolmo
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/tolmo.png
 name: Tolmo
-description: 'Tolmo is a company surfaced as a portfolio company of accel, y-combinator and added to the
-  API Evangelist network as a stub for enrichment. Sector: security. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: >-
+  Tolmo builds AI-native cybersecurity for engineering teams. Its platform pairs
+  automated cloud and SaaS discovery (AWS, GitHub, Datadog, Linear, Cloudflare,
+  and more) with event-driven agents that run continuous pentesting, threat
+  modeling, finding generation, and verified remediation against the customer's
+  real infrastructure graph. The primary developer surface is the Tolmo CLI: SQL
+  and Cypher queries over the infrastructure graph, full-lifecycle security
+  findings management, and a secure server-side proxy for GitHub/AWS/Linear/
+  Sentry/Datadog requests, plus a first-party agent skill for Claude Code and
+  other AI agents. Backed by Accel and Y Combinator.
 url: https://raw.githubusercontent.com/api-evangelist/tolmo/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - accel
 - y-combinator
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-provider-surface
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Security
-apis: []
+- Cybersecurity
+- Cloud Security
+- Vulnerability Management
+- CLI
+- DevSecOps
+- AI Agents
+- Infrastructure Graph
+apis:
+- name: Tolmo Platform API
+  description: >-
+    Backend API for the Tolmo cloud security platform, consumed through the
+    Tolmo CLI (SQL/Cypher queries over the infrastructure graph, security
+    findings management, and a secure server-side proxy for connected services).
+    No public OpenAPI is published; the CLI is the primary interface.
+  humanURL: https://docs.tolmo.com/
+  baseURL: https://api.tolmo.com
+  properties:
+  - type: Documentation
+    url: https://docs.tolmo.com/
+  - type: Authentication
+    url: authentication/tolmo-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DeveloperPortal
+  url: https://docs.tolmo.com/
+- type: Documentation
+  url: https://docs.tolmo.com/
+- type: GettingStarted
+  url: https://docs.tolmo.com/installation
+- type: Authentication
+  url: authentication/tolmo-authentication.yml
+- type: CLI
+  url: cli/tolmo-cli.yml
+- type: Packages
+  url: packages/tolmo-packages.yml
+- type: Conventions
+  url: conventions/tolmo-conventions.yml
+- type: Lifecycle
+  url: lifecycle/tolmo-lifecycle.yml
+- type: StatusPage
+  url: https://status.tolmo.com
+- type: ChangeLog
+  url: changelog/tolmo-changelog.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/tolmo-llms.txt
+- type: WellKnown
+  url: well-known/tolmo-well-known.yml
+- type: SecurityTxt
+  url: well-known/tolmo-security.txt
+- type: Security
+  url: https://tolmo.com/security
+- type: VulnerabilityDisclosure
+  url: security/tolmo-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/tolmo-domain-security.yml
+- type: TrustCenter
+  url: security/tolmo-trust-center.yml
+- type: GitHubOrganization
+  url: https://github.com/tolmohq
+- type: Blog
+  url: https://tolmo.com/blog/
+- type: Support
+  url: https://tolmo.com/contact/
+- type: SignUp
+  url: https://app.tolmo.com/
 - type: Website
   url: https://tolmo.com/
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 16
+  pass: local-v1

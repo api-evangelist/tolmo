@@ -1,0 +1,22 @@
+# Tolmo
+
+> Tolmo builds AI-native cybersecurity for engineering teams. The platform combines automated cloud and SaaS discovery (AWS, GitHub, Datadog, Linear, Cloudflare, ...) with event-driven agents that run threat modeling, finding generation, and remediation against the customer's real infrastructure graph.
+
+## Docs
+
+- [Tolmo CLI Authentication: Login, Profiles, and CI/CD](https://docs.tolmo.com/authentication.md): Log in to Tolmo with browser-based OAuth, use named profiles for multiple orgs, or configure environment variables for CI/CD pipelines and automation.
+- [Browse and Clone Repositories Connected to Your Organization](https://docs.tolmo.com/commands/code.md): Use tolmo code to list repositories in your organization and clone them from GitHub or GitLab. Supports multiple input formats and bulk cloning.
+- [Create, Triage, and Manage Security Findings via CLI](https://docs.tolmo.com/commands/findings.md): Create, update, triage, and delete security findings. Control severity, visibility, and status with a full audit trail via tolmo findings commands.
+- [Query Connected Services Through Tolmo's Secure Proxy](https://docs.tolmo.com/commands/query.md): Proxy REST, GraphQL, and CLI requests to GitHub, AWS, Linear, Sentry, and Datadog through Tolmo. Credentials are resolved server-side and never exposed.
+- [Run SQL and Cypher Queries Against Your Infrastructure](https://docs.tolmo.com/commands/sql-cypher.md): Run SQL queries against your org's relational data and Cypher queries against the infrastructure graph. Both commands support --json for scripting.
+- [Configure the Tolmo CLI with Environment Variables](https://docs.tolmo.com/configuration/environment-variables.md): Configure the Tolmo CLI for CI/CD with environment variables. Set TOLMO_API_TOKEN and TOLMO_ORG_SLUG to authenticate without interactive login.
+- [Global Flags Reference for Every Tolmo CLI Command](https://docs.tolmo.com/configuration/global-flags.md): Use --org, --profile, and --json on any Tolmo command to override the active org, switch profiles, or get machine-readable JSON output per invocation.
+- [Using Named Profiles to Manage Multiple Tolmo Orgs](https://docs.tolmo.com/configuration/profiles.md): Named profiles let you store separate Tolmo credentials for different organizations or environments and switch between them without re-authenticating.
+- [Manage Platform-Owned Datadog Monitors](https://docs.tolmo.com/features/monitors.md): Create, update, and delete Datadog monitors managed by the Tolmo platform. All monitors are tagged managed-by:tolmo and use server-side org credentials.
+- [Download Threat Model Artifacts](https://docs.tolmo.com/features/threat-model.md): Retrieve threat model pipeline runs and artifacts using tolmo threat-model. Download the latest run or a specific step from a named pipeline scan.
+- [Website Scans and Organization Management](https://docs.tolmo.com/features/website-org.md): List crawled domains and scan history with tolmo website, and switch between organizations with tolmo org. Manage your active context from the terminal.
+- [Install the Tolmo CLI Skill for Claude Code and AI Agents](https://docs.tolmo.com/guides/agent-skill.md): Install the Tolmo skill into Claude Code and other AI agents to enable infrastructure queries, findings management, and connected service proxying.
+- [Automate Security Checks in CI/CD Pipelines with Tolmo](https://docs.tolmo.com/guides/ci-cd.md): Run Tolmo CLI commands in GitHub Actions, GitLab CI, and other pipelines using environment variables for token-based, non-interactive authentication.
+- [Query Historical Infrastructure State with Time Machine](https://docs.tolmo.com/guides/time-machine.md): Use Tolmo's temporal graph attributes firstSeenAt and lastSeenAt to query when infrastructure resources appeared, changed, or went stale.
+- [Install the Tolmo CLI: Homebrew, Script, and Debian](https://docs.tolmo.com/installation.md): Install the Tolmo CLI via Homebrew, the install script, or a Debian package. Supports macOS and Linux on amd64 and arm64 architectures.
+- [Tolmo: Cloud Security CLI for Modern Security Teams](https://docs.tolmo.com/introduction.md): Tolmo is the cloud security platform CLI. Query infrastructure graphs, manage security findings, and proxy requests to services like GitHub, AWS, and more.
