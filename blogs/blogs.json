@@ -5,8 +5,15 @@
       "source": "https://tolmo.com/blog/",
       "feed_url": "https://tolmo.com/blog/index.xml",
       "title": "",
-      "saved": 1,
+      "saved": 0,
       "method": "discovered"
+    },
+    {
+      "source": "https://tolmo.com/blog/index.xml",
+      "feed_url": "https://tolmo.com/blog/index.xml",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
     },
     {
       "source": "https://github.com/tolmohq",
@@ -16,6 +23,6 @@
       "method": "none"
     }
   ],
-  "post_count": 1,
-  "fetched": "2026-10-10T13:15:00Z"
+  "post_count": 6,
+  "fetched": "2026-10-17T14:53:57Z"
 }
