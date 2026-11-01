@@ -64,6 +64,94 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Tolmo is a company surfaced as a portfolio company of accel, y-combinator and added to the API Evangelist network as a stub for enrichment. Sector: security. This profile is a lead awaiting the enrichment pipeline.
+Tolmo builds AI-native cybersecurity for engineering teams. Its platform pairs automated cloud and SaaS discovery (AWS, GitHub, Datadog, Linear, Cloudflare, and more) with event-driven agents that run continuous pentesting, threat modeling, finding generation, and verified remediation against the customer's real infrastructure graph. The primary developer surface is the Tolmo CLI: SQL and Cypher queries over the infrastructure graph, full-lifecycle security findings management, and a secure server-side proxy for GitHub/AWS/Linear/ Sentry/Datadog requests, plus a first-party agent skill for Claude Code and other AI agents. Backed by Accel and Y Combinator.
 
-Backed by: accel, y-combinator — https://tolmo.com/
+**Areas:** Company · Security · Cybersecurity · Cloud Security · Vulnerability Management · CLI · DevSecOps · AI Agents · Infrastructure Graph
+
+## Tolmo on APIs.io
+
+Everything profiled for Tolmo is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/tolmo/](https://apis.io/providers/tolmo/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Tolmo Platform API](https://apis.io/apis/tolmo/tolmo-platform-api/) — Backend API for the Tolmo cloud security platform, consumed through the Tolmo CLI (SQL/Cypher queries over the infrastructure graph, security findings…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Tolmo Authentication](https://apis.io/security/tolmo/tolmo-authentication/)
+- [Tolmo Domain Security](https://apis.io/security/tolmo/tolmo-domain-security/)
+- [Tolmo Trust Center](https://apis.io/security/tolmo/tolmo-trust-center/)
+- [Tolmo Vulnerability Disclosure](https://apis.io/security/tolmo/tolmo-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://tolmo.com/)
+- [Documentation](https://docs.tolmo.com/)
+- [Getting started](https://docs.tolmo.com/installation)
+- [Sign up](https://app.tolmo.com/)
+- [Support](https://tolmo.com/contact/)
+- [Blog](https://tolmo.com/blog/)
+- [Security](https://tolmo.com/security)
+- [GitHub](https://github.com/tolmohq)
+- [Status](https://status.tolmo.com)
+
+## API Evangelist rating
+
+**Kin Score 26.6** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 58.9 |
+| Access clarity | 7.9 |
+
+**Agent readiness 3.4** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/tolmo/](https://apis.io/providers/tolmo/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Tolmo: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/tolmo/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
